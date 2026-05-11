@@ -43,6 +43,14 @@ En esta sección debes mencionar que se utilizó el módulo MSSP del PIC18F45K22
 
 <img width="899" height="1599" alt="image" src="https://github.com/user-attachments/assets/ab157bc5-4bfd-4f52-8a68-82e529a69e83" />
 
+# Implementación de la Segunda Parte: 
+
+Caracteres Especiales y AnimaciónPara cumplir con la segunda parte del procedimiento, se transformó el código de una visualización estática a una dinámica. Los cambios principales se realizaron en la gestión de la memoria de la LCD y en la lógica del bucle principal.
+- Creación de la Función de Usuario (lcd_create_char)El cambio fundamental fue añadir una función que permitiera acceder a la CGRAM (Character Generator RAM). A diferencia de los caracteres estándar, estos se deben cargar byte por byte.Lógica del cambio: Se implementó una función que envía el comando 0x40 (dirección base de la CGRAM) seguido de los 8 bytes que definen la matriz de puntos del icono de la batería.
+- Definición de Patrones de BitsSe agregaron arreglos de tipo unsigned char para representar los niveles de energía (0%, 25%, 50%, 75% y 100%).Diferencia técnica: Mientras que en la parte 1 solo se enviaban códigos ASCII estándar, en esta parte se diseñaron "mapas de bits" manuales donde cada bit representa un píxel de la matriz de $5 \times 8$.
+- Bucle de Animación en main.cEn lugar de escribir un mensaje una sola vez, se modificó el while(1) para iterar sobre las posiciones de memoria donde se guardaron los iconos:Uso del Cursor: Se fijó el cursor en una posición constante (ej. fila 0, columna 7) para evitar que la pantalla se llenara de iconos y crear el efecto de que la batería "crece" en el mismo lugar.Control de Tiempo: Se integró la macro __delay_ms() para que el ojo humano pudiera percibir el cambio de estado de la carga, cumpliendo así con el requisito de actualización dinámica.
+- Integración del Desplazamiento (Scrolling)Se aprovechó el comando de control 0x18 dentro del ciclo de animación. Esto permitió que, además de cambiar el icono de la batería, todo el texto se desplazara hacia la izquierda, integrando así los dos requerimientos finales del laboratorio en una sola rutina de ejecución.
+  
 ## Preguntas
 
 1. ¿Por qué I²C se clasifica como half-duplex mientras que SPI es full-duplex? ¿Qué implicación práctica tiene esa diferencia para el control de una LCD?.
