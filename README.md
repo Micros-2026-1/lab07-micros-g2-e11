@@ -5,6 +5,12 @@
 
 ## Integrantes
 
+# [Jose Angel Figueroa Castañeda ](https://github.com/joseanfigueroaca)
+
+# [Diego Fernando Yugue Robayo](https://github.com/DiegoYugue)
+
+# [Nicolas Esteban Martines Rocha](https://github.com/NicolasMartinez)
+
 ## Marco Teorico
 
 El protocolo I²C (Inter-Integrated Circuit) es un sistema de comunicación serial de dos hilos que utiliza una línea de datos (SDA) y una de reloj (SCL). Se clasifica como una comunicación half-duplex, lo que significa que solo un dispositivo puede enviar datos por el bus en un momento determinado, a diferencia del protocolo SPI que es full-duplex.
