@@ -11,6 +11,19 @@
 
 # [Nicolas Esteban Martines Rocha](https://github.com/NicolasMartinez)
 
+## Objetivos 
+
+1. Configurar el módulo I²C (MSSP) del PIC18F45K22 en modo maestro.
+
+2. Comunicar el PIC con una LCD 16 × 2 utilizando el adaptador basado en PCF8574.
+
+3. Implementar funciones para enviar comandos y caracteres vía I²C.
+
+4. Mostrar mensajes en la pantalla LCD desde el programa principal.
+
+
+
+
 ## Marco Teorico
 
 El protocolo I²C (Inter-Integrated Circuit) es un sistema de comunicación serial de dos hilos que utiliza una línea de datos (SDA) y una de reloj (SCL). Se clasifica como una comunicación half-duplex, lo que significa que solo un dispositivo puede enviar datos por el bus en un momento determinado, a diferencia del protocolo SPI que es full-duplex.
@@ -29,19 +42,33 @@ Para el control de la pantalla LCD 16x2 en este laboratorio, se destacan los sig
 
 
 ## Documentación
-En esta sección debes mencionar que se utilizó el módulo MSSP del PIC18F45K22 configurado como maestro I²C. La conexión se realizó mediante los pines RC3 (SCL) y RC4 (SDA) hacia el expansor PCF8574. El sistema permite controlar una pantalla de 32 caracteres totales (16 columnas x 2 filas) usando solo dos hilos de datos.
+
+👉 [PICK18F45K22](https://www.alldatasheet.com/datasheet-pdf/download/348759/MICROCHIP/PIC18F45K22.html)
+
+
+- Módulo de Comunicación: Se utilizó el módulo MSSP del microcontrolador PIC18F45K22, el cual fue configurado como maestro I²C.
+
+Pines de Conexión: La conexión física entre el microcontrolador y el bus se realizó mediante los pines RC3 (SCL - Reloj) y RC4 (SDA - Datos) hacia el módulo expansor de entrada/salida PCF8574.
+
+Interfaz de Pantalla: El sistema permite controlar una pantalla alfanumérica de 32 caracteres totales (16 columnas x 2 filas).
+
+Optimización: Al utilizar este protocolo de comunicación junto con el expansor PCF8574 (dirección 0x4E), se logra controlar la totalidad del panel LCD usando solo dos hilos de datos, liberando el resto de los puertos del PIC para otras tareas o periféricos.
 ## Diagramas
 
-<img width="780" height="510" alt="image" src="https://github.com/user-attachments/assets/1843013f-3108-447d-9a32-cc08a6818f22" />
+- [ diagrama de conexion](image.png)
+
+- [Diagrama pic y display](image-3.png)
+
+[](<img width="780" height="510" alt="image" src="https://github.com/user-attachments/assets/1843013f-3108-447d-9a32-cc08a6818f22" />)
 
 ## Evidencias de implementación
-### Parte 1: Visualizacion del texto estatico
+### Parte 1: 
 
-<img width="720" height="1280" alt="image" src="https://github.com/user-attachments/assets/e014c621-7668-445f-99a7-f4887319cc6d" />
+- [Visualizacion del texto estatico](image-1.png)
 
-### Parte 2 con enlace del laboratorio 4 ( Caracteres especiales y desplazamiento)
+### Parte 2 
 
-<img width="899" height="1599" alt="image" src="https://github.com/user-attachments/assets/ab157bc5-4bfd-4f52-8a68-82e529a69e83" />
+[Caracteres especiales y desplazamiento](image-2.png)
 
 # Implementación de la Segunda Parte: 
 
@@ -107,4 +134,4 @@ Caracteres Especiales y AnimaciónPara cumplir con la segunda parte del procedim
   
 - La modularización del código en archivos .c y .h facilita el mantenimiento y la portabilidad del firmware entre diferentes proyectos.
 
-## Referencias
+
