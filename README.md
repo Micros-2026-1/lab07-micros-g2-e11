@@ -59,7 +59,9 @@ Optimización: Al utilizar este protocolo de comunicación junto con el expansor
 
 - [Diagrama pic y display](image-3.png)
 
-[](<img width="780" height="510" alt="image" src="https://github.com/user-attachments/assets/1843013f-3108-447d-9a32-cc08a6818f22" />)
+- [VIDEO](https://youtu.be/7SYWwOqLw5Y?si=9OWppx6gzSSqL9qP)
+
+- [DISPLAY](<img width="780" height="510" alt="image" src="https://github.com/user-attachments/assets/1843013f-3108-447d-9a32-cc08a6818f22" />)
 
 ## Evidencias de implementación
 ### Parte 1: 
